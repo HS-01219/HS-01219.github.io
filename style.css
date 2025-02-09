@@ -11,6 +11,7 @@ header {
     height: 60px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #18181d;
     position: fixed;
 }
@@ -23,8 +24,24 @@ header span {
     text-shadow: 1px 1px 0px #ffffff;
 }
 
+.nav_head {
+    display: none;
+    margin-right: 30px;
+}
+
+.nav_head a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav_head a:hover {
+    color: #f570bf;
+}
+
 /* nav */
-nav {
+#floatMenu {
     width: 130px;
     border: 2px solid #d65b8e;
     border-radius: 15px;
@@ -34,9 +51,10 @@ nav {
     right: 20px;
     background-color: #ffffff;
     z-index: 9999;
+    transition: opacity 0.4s ease;
 }
 
-nav > a {
+#floatMenu > a {
     display: flex;
     flex-flow: column;
     text-decoration: none;
@@ -46,7 +64,7 @@ nav > a {
     color: #000000;
 }
 
-nav > a:not(:last-child)::after {
+#floatMenu > a:not(:last-child)::after {
     content: '';
     position: absolute;
     bottom: 0; 
@@ -56,17 +74,17 @@ nav > a:not(:last-child)::after {
     border-bottom: 1px solid #d65b8e; 
 }
 
-nav > a:first-child {
+#floatMenu > a:first-child {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-nav > a:last-child {
+#floatMenu > a:last-child {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
-nav > a:hover {
+#floatMenu > a:hover {
     color: rgb(214, 91, 142);
     font-weight: bold;
     background-color: #f8ebeb;
@@ -146,7 +164,7 @@ nav > a:hover {
 
 /* main */
 #main p {
-    font-size: 170px;
+    font-size: clamp(40px, 9vw, 170px); 
     font-weight: bolder;
     color: #ffffff;
     -webkit-text-stroke: 0.02em #ffffff;
@@ -178,7 +196,7 @@ nav > a:hover {
 }
 
 .section_content .row_title {
-    font-size: 20px;
+    font-size: clamp(5px, 10vw, 20px);
     font-weight: bold;
     flex: 0.5;
     min-width: 120px;
@@ -186,7 +204,7 @@ nav > a:hover {
 }
 
 .section_content .row_content {
-    font-size: 20px;
+    font-size: clamp(5px, 10vw, 20px);
     font-weight: bold;
     flex: 2;
     min-width: 170px;
@@ -205,6 +223,20 @@ nav > a:hover {
     background-color: #d65b8e;
     height: 65%; 
     align-self: center; 
+}
+
+@media (max-width: 1000px) {
+    .line {
+        display: none;
+    }
+    
+    .about_content {
+        flex-direction: column;
+    }
+
+    .right_section {
+        margin-top: 20px;
+    }
 }
 
 .row_line {
@@ -227,7 +259,7 @@ nav > a:hover {
 }
 
 .flex_col p {
-    font-size: 18px;
+    font-size: clamp(5px, 10vw, 18px);;
     font-weight: bold;
 }
 
@@ -284,7 +316,6 @@ nav > a:hover {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    min-width: 1200px;
 }
 
 #project .section_title, #skill .section_title {
@@ -389,13 +420,15 @@ nav > a:hover {
     gap: 10px;
 }
 
+@media (max-width: 768px) {
+    .swiper-slide {
+        min-width: 100%; 
+    }
+}
+
 .swiper-slide.swiper-slide-active {
     background-color: #ffffff;
     opacity: 1;
     transform: translateZ(0) scale(1.0)!important;
 }
-@media (min-width: 800px) {
-    
-}
-
 
