@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
     /* 플로팅메뉴 */
-    var floatPosition = parseInt($("#floatMenu").css('top'));
+    let floatPosition = parseInt($("#floatMenu").css('top'));
 
     $(window).scroll(function(){
-        var scrollTop = $(window).scrollTop();
-        var newPosition = scrollTop + floatPosition + "px";
+        let scrollTop = $(window).scrollTop();
+        let newPosition = scrollTop + floatPosition + "px";
 
         $("#floatMenu").stop().animate({
             "top" : newPosition,
